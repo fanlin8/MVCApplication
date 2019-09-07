@@ -18,6 +18,18 @@ namespace MVCApplication
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Product",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Product", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "ProductDetails",
+                url: "{controller}/Details/{productName}",
+                defaults: new { controller = "Product", action = "Details"}
+            );
         }
     }
 }

@@ -18,17 +18,31 @@ namespace MVCApplication.Controllers
             return View(products);
         }
 
-        // GET: Product/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id.GetValueOrDefault() == 0)
-            {
-                return Content("Not a valid Product!!!");
-            }
-            var inputId = Server.HtmlEncode("ID of selected product is " + id.ToString());
-            return Content(inputId);
-        }
+        //// GET: Product/Details/5
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id.GetValueOrDefault() == 0)
+        //    {
+        //        return Content("Not a valid Product!!!");
+        //    }
+        //    var inputId = Server.HtmlEncode("ID of selected product is " + id.ToString());
+        //    return Content(inputId);
+        //}
 
+        // GET: Product/Details/productName
+        public ActionResult Details(string productName)
+        {
+            var product = new Product();
+            foreach (var p in GetProductList())
+            {
+                if (p.Name == productName)
+                {
+                    product = p;
+                    break;
+                }
+            }
+            return View(product);
+        }
         // GET: Product/Create
         public ActionResult Create()
         {
@@ -111,14 +125,14 @@ namespace MVCApplication.Controllers
                 {
                     ID = 2,
                     Name = "Shoe",
-                    Detail = "Red Coat",
+                    Detail = "Red Shoe",
                     Price = 24.99m
                 },
                 new Product
                 {
                     ID = 2,
                     Name = "Bag",
-                    Detail = "White Coat",
+                    Detail = "White Bag",
                     Price = 59.99m
                 },
                 new Product

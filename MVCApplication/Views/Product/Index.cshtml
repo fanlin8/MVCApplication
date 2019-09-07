@@ -35,7 +35,8 @@
             @Html.DisplayFor(modelItem => item.Detail)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id=item.ID })
+            @*@Html.ActionLink("Details", "Details", new { id = item.ID })*@
+            @Html.ActionLink("Details", "Details", new { productName = item.Name })
         </td>
     </tr>
 }
