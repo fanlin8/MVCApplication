@@ -18,24 +18,17 @@ namespace MVCApplication.Controllers
             return View(products);
         }
 
-        //// GET: Product/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id.GetValueOrDefault() == 0)
-        //    {
-        //        return Content("Not a valid Product!!!");
-        //    }
-        //    var inputId = Server.HtmlEncode("ID of selected product is " + id.ToString());
-        //    return Content(inputId);
-        //}
-
-        // GET: Product/Details/productName
-        public ActionResult Details(string productName)
+        // GET: Product/Details/5
+        public ActionResult Details(int? id)
         {
+            if (id.GetValueOrDefault() == 0)
+            {
+                return Content("Not a valid Product!!!");
+            }
             var product = new Product();
             foreach (var p in GetProductList())
             {
-                if (p.Name == productName)
+                if (p.ID == id)
                 {
                     product = p;
                     break;
@@ -117,30 +110,38 @@ namespace MVCApplication.Controllers
                 new Product
                 {
                     ID = 1,
-                    Name = "Coat",
-                    Detail = "Green Coat",
-                    Price = 12.99m
+                    Category = "Coat",
+                    Name = "MIUCY Green Coat",
+                    Detail = "Size: S,M,L." + Environment.NewLine + "Fabric: Cotton",
+                    Price = 68.99m,
+                    Image = "https://www.pinkqueen.com/upload/thumb/360x540/goodsimport/2014-12/PTC0183GR_1.jpg"
                 },
                 new Product
                 {
                     ID = 2,
-                    Name = "Shoe",
-                    Detail = "Red Shoe",
-                    Price = 24.99m
-                },
-                new Product
-                {
-                    ID = 2,
-                    Name = "Bag",
-                    Detail = "White Bag",
-                    Price = 59.99m
+                    Category = "Shoe",
+                    Name = "MIKASO Red Shoe",
+                    Detail = "Material: Patent." + Environment.NewLine + "Heel Height: 3.92\"",
+                    Price = 124.99m,
+                    Image = "http://www.shoeperwoman.com/wp-content/uploads/2013/05/red-shoes1.jpg"
                 },
                 new Product
                 {
                     ID = 3,
-                    Name = "Jewelry",
-                    Detail = "Diamond Ring",
-                    Price = 1299.99m
+                    Category = "Bag",
+                    Name = "ROMI White Bag",
+                    Detail = "Material: Genuine Leather." + Environment.NewLine + "Dimension: 6.75\"W*6\"H*3\"D",
+                    Price = 259.99m,
+                    Image = "https://cdn.shopify.com/s/files/1/1754/9245/products/HU19ESTSA2_STELLA_MINI_SATCHEL_XBODY_129_OPTIC_WHITE_A_grande.jpg?v=1554144227"
+                },
+                new Product
+                {
+                    ID = 4,
+                    Category = "Jewelry",
+                    Name = "ZODC Diamond Ring",
+                    Detail = "Center Diamond: round cut." + Environment.NewLine + "Total carat weight: choose of 0.25, 0.5 and more",
+                    Price = 1299.99m,
+                    Image = "http://venamoris.com/wp-content/uploads/2018/06/RCE-003-P11.jpg"
                 },
             };
         }

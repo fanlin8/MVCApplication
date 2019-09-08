@@ -27,8 +27,8 @@ namespace MVCApplication
 
             routes.MapRoute(
                 name: "ProductDetails",
-                url: "{controller}/Details/{productName}",
-                defaults: new { controller = "Product", action = "Details"}
+                url: "Product/Details/{id}",
+                defaults: new { controller = "Product", action = "Details" }
             );
         }
     }
