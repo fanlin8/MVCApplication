@@ -22,3 +22,83 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.footer {
+    padding: 20px 10%;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.navbar-nav {
+    float: right;
+    margin: 0;
+}
+
+.top-content {
+    padding: 120px 0 120px 0;
+    background-image: url('https://image.freepik.com/free-photo/tissue-papers-row-shopping-bags-arranged-yellow-background_23-2147892265.jpg');
+    background-repeat: round;
+    background-attachment: fixed;
+}
+
+.top-content .text {
+    padding-top: 60px;
+    color: #fff;
+}
+
+.top-content .text h1 {
+    color: #fff;
+}
+
+.top-content .description {
+    margin: 30px 0 10px 0;
+}
+
+.top-content .description p {
+    opacity: 0.8;
+}
+
+.top-content .description a {
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+}
+
+.top-content .description a:hover, .top-content .description a:focus {
+    color: #fff;
+    border: 0;
+}
+
+.background-mask {
+    background-color: #00000040;
+}
+
+.divider-1 {
+    padding: 25px 0 15px 0;
+}
+
+.divider-1 .line {
+    width: 160px;
+    margin: 0 auto;
+    border-bottom: 1px dashed #ccc;
+}
+.features-box {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.features-box .features-box-icon {
+    font-size: 60px;
+    color: #f3d668;
+    line-height: 60px;
+    text-align: center;
+}
+
+.features-box h3 {
+    margin-top: 0;
+    padding: 0 0 10px 0;
+}
+
+.section-description {
+    text-align: center;
+}
+
