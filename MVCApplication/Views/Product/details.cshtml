@@ -14,14 +14,17 @@
     </div>
     <div class="col-md-3">
         <div class="row">
-            <p style="font-size:30px">@Html.DisplayFor(model => model.Name)</p>
+            <p style="font-size:30px;font-weight:bold">@Html.DisplayFor(model => model.Name)</p>
         </div>
         <div class="row">
-            <p style="font-size:20px">Price: $@Html.DisplayFor(model => model.Price)</p>
+            <p style="font-size:20px;font-weight:bold">Price: $@Html.DisplayFor(model => model.Price)</p>
         </div>
         <div class="row">
             <p style="font-size:15px;font-weight:bold">Details:</p>
             <p style="font-size:15px">@Html.DisplayFor(model => model.Detail)</p>
+        </div>
+        <div class="row">
+            <p style="font-size:15px;font-weight:bold">Inventory: @Html.DisplayFor(model => model.Inventory)</p>
         </div>
     </div>
 </div>

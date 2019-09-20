@@ -13,5 +13,6 @@ namespace MVCApplication.Models
         public string Category { get; set; }
         public string Detail { get; set; }
         public string Image { get; set; }
+        public int Inventory { get; set; }
     }
 }

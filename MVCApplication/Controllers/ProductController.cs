@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business;
+using Models;
 
 namespace MVCApplication.Controllers
 {
@@ -12,9 +14,11 @@ namespace MVCApplication.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            var products = from p in GetProductList()
-                            orderby p.ID
-                            select p;
+            //var products = from p in GetProductList()
+            var products = from p in GetProductListFromDB()
+                           orderby p.ID
+                           select p;
+
             return View(products);
         }
 
@@ -26,7 +30,8 @@ namespace MVCApplication.Controllers
                 return Content("Not a valid Product!!!");
             }
             var product = new Product();
-            foreach (var p in GetProductList())
+
+            foreach (var p in GetProductListFromDB())
             {
                 if (p.ID == id)
                 {
@@ -144,6 +149,27 @@ namespace MVCApplication.Controllers
                     Image = "http://venamoris.com/wp-content/uploads/2018/06/RCE-003-P11.jpg"
                 },
             };
+        }
+
+        [NonAction]
+        public List<Product> GetProductListFromDB()
+        {
+            var productsDB = ProductDataDisplay.productDataDisplay();
+            var products = new List<Product>();
+            foreach (ProductFromDB pdb in productsDB)
+            {
+                Product pd = new Product();
+                pd.ID = pdb.ID;
+                pd.Name = pdb.Name;
+                pd.Price = pdb.Price;
+                pd.Category = pdb.Category;
+                pd.Detail = pdb.Detail;
+                pd.Image = pdb.Image;
+                pd.Inventory = pdb.Inventory;
+
+                products.Add(pd);
+            }
+            return products;
         }
     }
 }

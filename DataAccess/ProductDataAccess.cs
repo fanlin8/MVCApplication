@@ -14,7 +14,7 @@ namespace DataAccess
         public static DataSet productDataAccessDBWithConfig()
         {
             // Retrieve config string from web.config
-            var cfg = ConfigurationManager.ConnectionStrings["aStarDB"].ConnectionString;
+            var cfg = ConfigurationManager.ConnectionStrings["aStarDB_Q"].ConnectionString;
             SqlConnection sqlConnect = new SqlConnection(cfg);
 
             // Open DB connection
