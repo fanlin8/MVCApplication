@@ -1,5 +1,4 @@
-﻿using MVCApplication.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -155,21 +154,8 @@ namespace MVCApplication.Controllers
         public List<Product> GetProductListFromDB()
         {
             var productsDB = ProductDataDisplay.productDataDisplay();
-            var products = new List<Product>();
-            foreach (ProductFromDB pdb in productsDB)
-            {
-                Product pd = new Product();
-                pd.ID = pdb.ID;
-                pd.Name = pdb.Name;
-                pd.Price = pdb.Price;
-                pd.Category = pdb.Category;
-                pd.Detail = pdb.Detail;
-                pd.Image = pdb.Image;
-                pd.Inventory = pdb.Inventory;
 
-                products.Add(pd);
-            }
-            return products;
+            return productsDB;
         }
     }
 }

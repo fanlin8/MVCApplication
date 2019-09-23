@@ -12,10 +12,10 @@ namespace Business
 {
     public class ProductDataDisplay
     {
-        public static List<ProductFromDB> productDataDisplay()
+        public static List<Product> productDataDisplay()
         {
             ProductDataAccess productData = new ProductDataAccess();
-            var productDataList = new List<ProductFromDB>();
+            var productDataList = new List<Product>();
             DataSet productDataSet = new DataSet();
 
             // 2nd Assignment
@@ -25,7 +25,7 @@ namespace Business
             // Convert DataSet into a list of objects
             if (productDataSet.Tables.Count > 0)
             {
-                productDataList = productDataSet.Tables[0].AsEnumerable().Select(p => new ProductFromDB
+                productDataList = productDataSet.Tables[0].AsEnumerable().Select(p => new Product
                 {
                     // Mapping
                     ID = Convert.ToInt32(p["ID"]),
