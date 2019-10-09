@@ -20,7 +20,12 @@ namespace Business
 
             // 2nd Assignment
             // Retrieve data from DB
-            productDataSet = ProductDataAccess.productDataAccessDBWithConfig();
+            // productDataSet = ProductDataAccess.GetProductDataAccessDBWithConfig();
+
+            // 3nd Assignment
+            // Retrieve data from web service
+            var productSerivce = new ProductServiceReference.ProductServiceClient();
+            productDataSet = productSerivce.GetProductDataAccessDBWithConfig();
 
             // Convert DataSet into a list of objects
             if (productDataSet.Tables.Count > 0)
