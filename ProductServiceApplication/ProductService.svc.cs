@@ -19,9 +19,9 @@ namespace ProductServiceApplication
             return string.Format("You entered: {0}", value);
         }
 
-        public DataSet GetProductDataAccessDBWithConfig()
+        public DataSet GetProductDataAccessDBWithConfig(string config)
         {
-            return ProductDataAccess.GetProductDataAccessDBWithConfig();
+            return ProductDataAccess.GetProductDataAccessDBWithConfig(config);
         }
     }
 }

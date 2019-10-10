@@ -17,15 +17,17 @@ namespace Business
             ProductDataAccess productData = new ProductDataAccess();
             var productDataList = new List<Product>();
             DataSet productDataSet = new DataSet();
+            string config = "Qing";
+            //string config = "Fan";
 
             // 2nd Assignment
             // Retrieve data from DB
-            // productDataSet = ProductDataAccess.GetProductDataAccessDBWithConfig();
+            productDataSet = ProductDataAccess.GetProductDataAccessDBWithConfig(config);
 
             // 3nd Assignment
             // Retrieve data from web service
-            var productSerivce = new ProductServiceReference.ProductServiceClient();
-            productDataSet = productSerivce.GetProductDataAccessDBWithConfig();
+            //var productSerivce = new ProductServiceReference.ProductServiceClient();
+            //productDataSet = productSerivce.GetProductDataAccessDBWithConfig(config);
 
             // Convert DataSet into a list of objects
             if (productDataSet.Tables.Count > 0)

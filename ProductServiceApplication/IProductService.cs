@@ -18,7 +18,7 @@ namespace ProductServiceApplication
         string GetData(int value);
 
         [OperationContract]
-        DataSet GetProductDataAccessDBWithConfig();
+        DataSet GetProductDataAccessDBWithConfig(string config);
 
         // TODO: Add your service operations here
     }

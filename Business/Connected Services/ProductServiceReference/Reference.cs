@@ -22,10 +22,10 @@ namespace Business.ProductServiceReference {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductDataAccessDBWithConfig", ReplyAction="http://tempuri.org/IProductService/GetProductDataAccessDBWithConfigResponse")]
-        System.Data.DataSet GetProductDataAccessDBWithConfig();
+        System.Data.DataSet GetProductDataAccessDBWithConfig(string config);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductDataAccessDBWithConfig", ReplyAction="http://tempuri.org/IProductService/GetProductDataAccessDBWithConfigResponse")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GetProductDataAccessDBWithConfigAsync();
+        System.Threading.Tasks.Task<System.Data.DataSet> GetProductDataAccessDBWithConfigAsync(string config);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -63,12 +63,12 @@ namespace Business.ProductServiceReference {
             return base.Channel.GetDataAsync(value);
         }
         
-        public System.Data.DataSet GetProductDataAccessDBWithConfig() {
-            return base.Channel.GetProductDataAccessDBWithConfig();
+        public System.Data.DataSet GetProductDataAccessDBWithConfig(string config) {
+            return base.Channel.GetProductDataAccessDBWithConfig(config);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GetProductDataAccessDBWithConfigAsync() {
-            return base.Channel.GetProductDataAccessDBWithConfigAsync();
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetProductDataAccessDBWithConfigAsync(string config) {
+            return base.Channel.GetProductDataAccessDBWithConfigAsync(config);
         }
     }
 }
