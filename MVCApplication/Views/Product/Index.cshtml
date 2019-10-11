@@ -10,7 +10,7 @@
     This is a demo list for products.
 </p>
 <table class="table">
-    <tr>
+    <tr class="light-color">
         <th>
             @Html.DisplayNameFor(model => model.Category)
         </th>
@@ -20,24 +20,30 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inventory)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            $@Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id = item.ID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        $@Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Inventory)
+    </td>
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.ID })
+    </td>
+</tr>
 }
 
 </table>

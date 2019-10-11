@@ -25,7 +25,7 @@ namespace MVCApplication
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
         }
     }
 }

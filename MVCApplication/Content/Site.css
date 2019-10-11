@@ -25,7 +25,7 @@ textarea {
 
 .footer {
     padding: 20px 10%;
-    background-color: #f8f8f8;
+    background-color: #5bbede47;
     text-align: center;
 }
 
@@ -100,5 +100,33 @@ textarea {
 
 .section-description {
     text-align: center;
+}
+
+.new-navbar {
+    background-color: #5bbfde;
+    border-color: #ffd534;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+    font-size: xx-large;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #ffe493;
+    background-color: transparent;
+}
+
+.light-color {
+    background-color: #5bbede5c;
+}
+
+.colored {
+    background-color: #ffd53424;
+    border: 1px solid #ffd534;
 }
 

@@ -3,16 +3,15 @@
 @{
     ViewBag.Title = "Product Details";
 }
-<div class="jumbotron">
+<div class="jumbotron light-color">
     <h1>Product Details</h1>
+    <p>@Html.DisplayFor(model => model.Category) - @Html.DisplayFor(model => model.Name)</p>
 </div>
 <div class="row">
     <div class="col-md-6">
-        <p>
-            <img src="@Url.Content(Model.Image)" alt="" />
-        </p>
+        <img class="center-block" src="@Url.Content(Model.Image)" alt="" />
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6">
         <div class="row">
             <p style="font-size:30px;font-weight:bold">@Html.DisplayFor(model => model.Name)</p>
         </div>
@@ -20,11 +19,11 @@
             <p style="font-size:20px;font-weight:bold">Price: $@Html.DisplayFor(model => model.Price)</p>
         </div>
         <div class="row">
+            <p style="font-size:15px;font-weight:bold">Inventory: @Html.DisplayFor(model => model.Inventory)</p>
+        </div>
+        <div class="row well colored">
             <p style="font-size:15px;font-weight:bold">Details:</p>
             <p style="font-size:15px">@Html.DisplayFor(model => model.Detail)</p>
-        </div>
-        <div class="row">
-            <p style="font-size:15px;font-weight:bold">Inventory: @Html.DisplayFor(model => model.Inventory)</p>
         </div>
     </div>
 </div>
